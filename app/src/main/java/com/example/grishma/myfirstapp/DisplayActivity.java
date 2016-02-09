@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class DisplayActivity extends AppCompatActivity {
 
     @Override
@@ -32,12 +34,14 @@ public class DisplayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        Bundle extras = intent.getExtras();
-        String fullName = extras.getString("full_name");
-        String address = extras.getString("address");
-        String phone = extras.getString("phone_number");
-        String displayMessage = "Hello " + fullName + " from " + address + ". Is your number " + phone + "?";
+//        Bundle extras = intent.getExtras();
+//        String fullName = extras.getString("full_name");
+//        String address = extras.getString("address");
+//        String phone = extras.getString("phone_number");
+//        String displayMessage = "Hello " + fullName + " from " + address + ". Is your number " + phone + "?";
 
+        HashMap<String, String> hashMap = (HashMap<String, String>) intent.getSerializableExtra("hashMap");
+        String displayMessage = "Hello " + hashMap.get("full_name") + " from " + hashMap.get("address") + ". Is your number " + hashMap.get("phone_number") + "?";
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(displayMessage);
