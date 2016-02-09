@@ -2,6 +2,7 @@ package com.example.grishma.myfirstapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -30,11 +31,16 @@ public class DisplayActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        String fullName = intent.getStringExtra("full_name");
+
+        Bundle extras = intent.getExtras();
+        String fullName = extras.getString("full_name");
+        String address = extras.getString("address");
+        String phone = extras.getString("phone_number");
+        String displayMessage = "Hello " + fullName + " from " + address + ". Is your number " + phone + "?";
 
         TextView textView = new TextView(this);
         textView.setTextSize(40);
-        textView.setText(fullName);
+        textView.setText(displayMessage);
 
         RelativeLayout layout = (RelativeLayout) findViewById(R.id.content);
         layout.addView(textView);

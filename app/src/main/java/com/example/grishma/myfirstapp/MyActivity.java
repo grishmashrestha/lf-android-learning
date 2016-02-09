@@ -59,8 +59,14 @@ public class MyActivity extends AppCompatActivity {
         EditText phoneNumber = (EditText) findViewById(R.id.phoneNumber);
 
         String fullNameString = fullName.getText().toString();
-        intent.putExtra("full_name", fullNameString);
+        String addressString = address.getText().toString();
+        String phoneNumberString = phoneNumber.getText().toString();
 
+        Bundle extras = new Bundle();
+        extras.putString("full_name", fullNameString);
+        extras.putString("address", addressString);
+        extras.putString("phone_number", phoneNumberString);
+        intent.putExtras(extras);
         startActivity(intent);
     }
 }
