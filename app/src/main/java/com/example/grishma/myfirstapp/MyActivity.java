@@ -1,5 +1,6 @@
 package com.example.grishma.myfirstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class MyActivity extends AppCompatActivity {
 
@@ -48,5 +50,17 @@ public class MyActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DisplayActivity.class);
+        EditText fullName = (EditText) findViewById(R.id.fullName);
+        EditText address = (EditText) findViewById(R.id.address);
+        EditText phoneNumber = (EditText) findViewById(R.id.phoneNumber);
+
+        String fullNameString = fullName.getText().toString();
+        intent.putExtra("full_name", fullNameString);
+
+        startActivity(intent);
     }
 }
