@@ -66,9 +66,19 @@ public class MyActivity extends AppCompatActivity {
 
         String usernameString = username.getText().toString();
         String passwordString = password.getText().toString();
-//        boolean isBothValid = false;
-        if (validateUsername(usernameString) && validatePassword(passwordString)) {
-//            isBothValid = true;
+        boolean isBothValid;
+
+        if (!validateUsername(usernameString)) {
+            isBothValid = false;
+            username.setError("invalid username");
+        } else if (!validatePassword(passwordString)) {
+            isBothValid = false;
+            password.setError("invalid password");
+        } else {
+            isBothValid = true;
+        }
+
+        if (isBothValid) {
             HashMap<String, String> hashMap = new HashMap<String, String>();
             hashMap.put("username", usernameString);
             intent.putExtra("hashMap", hashMap);
