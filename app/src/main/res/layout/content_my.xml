@@ -10,27 +10,29 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
+    style="@style/loginForm"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_my"
     tools:context="com.example.grishma.myfirstapp.MyActivity">
 
-    <EditText
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/full_name"
-        android:id="@+id/fullName" />
+        android:text="Login Form"
+        style="@style/loginFormTitle"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/address"
-        android:id="@+id/address" />
+        android:hint="username"
+        android:id="@+id/username" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/phone_number"
-        android:id="@+id/phoneNumber"/>
+        android:inputType="textPassword"
+        android:id="@+id/password"
+        android:hint="password" />
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,15 +41,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:onClick="sendMessage"
-            android:hint="OK" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:hint="Cancel" />
+            android:onClick="loginProcess"
+            android:hint="Login" />
 
     </LinearLayout>
 

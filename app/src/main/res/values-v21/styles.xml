@@ -6,4 +6,12 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="loginForm">
+        <item name="android:background">@color/colorPrimaryGreen</item>
+    </style>
+
+    <style name="loginFormTitle">
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>
