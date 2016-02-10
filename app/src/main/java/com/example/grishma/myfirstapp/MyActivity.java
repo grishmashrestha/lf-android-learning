@@ -68,12 +68,6 @@ public class MyActivity extends AppCompatActivity {
         String addressString = address.getText().toString();
         String phoneNumberString = phoneNumber.getText().toString();
 
-//        Bundle extras = new Bundle();
-//        extras.putString("full_name", fullNameString);
-//        extras.putString("address", addressString);
-//        extras.putString("phone_number", phoneNumberString);
-//        intent.putExtras(extras);
-
         HashMap<String, String> hashMap = new HashMap<String, String>();
         hashMap.put("full_name", fullNameString);
         hashMap.put("address", addressString);
