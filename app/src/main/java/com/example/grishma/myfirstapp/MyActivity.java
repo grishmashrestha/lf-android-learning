@@ -13,7 +13,13 @@ import android.widget.EditText;
 
 import java.util.HashMap;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MyActivity extends AppCompatActivity {
+    @Bind(R.id.fullName) EditText fullName;
+    @Bind(R.id.address) EditText address;
+    @Bind(R.id.phoneNumber) EditText phoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +27,7 @@ public class MyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
 
        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -56,9 +63,6 @@ public class MyActivity extends AppCompatActivity {
 
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayActivity.class);
-        EditText fullName = (EditText) findViewById(R.id.fullName);
-        EditText address = (EditText) findViewById(R.id.address);
-        EditText phoneNumber = (EditText) findViewById(R.id.phoneNumber);
 
         String fullNameString = fullName.getText().toString();
         String addressString = address.getText().toString();
