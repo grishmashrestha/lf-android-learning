@@ -21,8 +21,11 @@
         <activity
             android:name=".DisplayActivity"
             android:label="@string/title_activity_display"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-
     </application>
 
 </manifest>

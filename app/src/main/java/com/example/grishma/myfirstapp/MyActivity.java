@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,9 +18,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MyActivity extends AppCompatActivity {
-    @Bind(R.id.fullName) EditText fullName;
-    @Bind(R.id.address) EditText address;
-    @Bind(R.id.phoneNumber) EditText phoneNumber;
+    @Bind(R.id.username) EditText username;
+    @Bind(R.id.password) EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,19 +61,34 @@ public class MyActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayActivity.class);
+    public void loginProcess(View view) {
+        Intent intent = new Intent(this, WelcomeActivity.class);
 
-        String fullNameString = fullName.getText().toString();
-        String addressString = address.getText().toString();
-        String phoneNumberString = phoneNumber.getText().toString();
+        String usernameString = username.getText().toString();
+        String passwordString = password.getText().toString();
+//        boolean isBothValid = false;
+        if (validateUsername(usernameString) && validatePassword(passwordString)) {
+//            isBothValid = true;
+            HashMap<String, String> hashMap = new HashMap<String, String>();
+            hashMap.put("username", usernameString);
+            intent.putExtra("hashMap", hashMap);
+            startActivity(intent);
+        }
+    }
 
-        HashMap<String, String> hashMap = new HashMap<String, String>();
-        hashMap.put("full_name", fullNameString);
-        hashMap.put("address", addressString);
-        hashMap.put("phone_number", phoneNumberString);
+    private Boolean validateUsername(String username) {
+        boolean flag = false;
+        if (username.length() <= 10) {
+            flag = true;
+        }
+        return flag;
+    }
 
-        intent.putExtra("hashMap", hashMap);
-        startActivity(intent);
+    private Boolean validatePassword(String password) {
+        boolean flag = false;
+        if (password.length() == 4) {
+            flag = true;
+        }
+        return flag;
     }
 }
