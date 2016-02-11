@@ -18,8 +18,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MyActivity extends AppCompatActivity {
-    @Bind(R.id.username) EditText username;
-    @Bind(R.id.password) EditText password;
+    @Bind(R.id.txtUsername) EditText username;
+    @Bind(R.id.txtPassword) EditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

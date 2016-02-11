@@ -21,18 +21,32 @@
         android:text="Login Form"
         style="@style/loginFormTitle"/>
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="username"
-        android:id="@+id/username" />
+        app:hintTextAppearance="@android:style/TextAppearance.Medium"
+        android:id="@+id/userName">
 
-    <EditText
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="username"
+            android:id="@+id/txtUsername" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:id="@+id/password"
-        android:hint="password" />
+        app:hintTextAppearance="@android:style/TextAppearance.Medium"
+        android:id="@+id/password">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/txtPassword"
+            android:hint="password" />
+    </android.support.design.widget.TextInputLayout>
     
     <LinearLayout
         android:layout_width="match_parent"
