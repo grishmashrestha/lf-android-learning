@@ -13,6 +13,10 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
+/**
+ * Displays welcome message, usually redirected from MyActivity
+ */
+
 public class DisplayActivity extends AppCompatActivity {
 
     @Override

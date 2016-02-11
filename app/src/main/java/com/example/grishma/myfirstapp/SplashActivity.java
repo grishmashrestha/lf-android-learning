@@ -1,3 +1,6 @@
+/**
+ * Shows splash screen on app start
+ */
 package com.example.grishma.myfirstapp;
 
 import android.content.Intent;

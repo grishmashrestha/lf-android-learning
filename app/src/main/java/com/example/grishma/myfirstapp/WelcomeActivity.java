@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
+/**
+ * Shows welcome message to user on login
+ */
+
 public class WelcomeActivity extends AppCompatActivity {
 
     @Override
