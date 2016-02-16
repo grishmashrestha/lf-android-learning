@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.grishma.myfirstapp.model.User;
 import com.example.grishma.myfirstapp.util.Validator;
 
 import java.util.HashMap;
@@ -82,9 +83,14 @@ public class MyActivity extends AppCompatActivity {
         }
 
         if (isBothValid) {
-            HashMap<String, String> hashMap = new HashMap<String, String>();
-            hashMap.put("username", usernameString);
-            intent.putExtra("hashMap", hashMap);
+//            HashMap<String, String> hashMap = new HashMap<String, String>();
+//            hashMap.put("username", usernameString);
+
+            User user = new User();
+            user.setUsername(usernameString);
+            user.setPassword(passwordString);
+
+            intent.putExtra("user", user);
             startActivity(intent);
         }
     }

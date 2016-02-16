@@ -1,9 +1,13 @@
 package com.example.grishma.myfirstapp.model;
 
+import java.io.Serializable;
+
 /**
- * Created by grishma on 2/16/16.
+ * This is a model representing User
+ * User has username and password
+ * The getter and setter methods are used to manipulate its attributes
  */
-public class User {
+public class User implements Serializable {
     private String username;
     private String password;
 

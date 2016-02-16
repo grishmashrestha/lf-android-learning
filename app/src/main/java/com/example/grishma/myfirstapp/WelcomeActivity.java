@@ -7,6 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.grishma.myfirstapp.model.User;
+
 import java.util.HashMap;
 
 /**
@@ -24,8 +26,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        HashMap<String, String> hashMap = (HashMap<String, String>) intent.getSerializableExtra("hashMap");
-        String welcomeMessage = "Hello " + hashMap.get("username") + ". Welcome to our new app!" ;
+        User user = (User) intent.getSerializableExtra("user");
+        String welcomeMessage = "Hello " + user.getUsername() + ". Welcome to our new app!" ;
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(welcomeMessage);
