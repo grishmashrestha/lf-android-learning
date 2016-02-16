@@ -65,7 +65,13 @@ public class MyActivity extends AppCompatActivity {
         boolean isBothValid;
         Validator validator = new Validator();
 
-        if (!validator.validateUsername(usernameString)) {
+
+
+        if (!validator.validateUsername(usernameString) && !validator.validatePassword(passwordString)) {
+            username.setError("invalid username");
+            password.setError("invalid password");
+            isBothValid = false;
+        } else if (!validator.validateUsername(usernameString)) {
             isBothValid = false;
             username.setError("invalid username");
         } else if (!validator.validatePassword(passwordString)) {

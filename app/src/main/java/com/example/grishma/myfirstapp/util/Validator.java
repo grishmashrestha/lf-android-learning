@@ -11,7 +11,7 @@ public class Validator {
      * @return true if length of username is <= 10, else false
      */
     public Boolean validateUsername(String username) {
-        return (username.length() <= 10 ? true : false);
+        return ((username.length() <= 10 && username.length() > 0) ? true : false);
     }
 
     /**
