@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,7 @@ public class MyActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
+        Log.i("MyActivity", "at onCreate.");
     }
 
     @Override
@@ -79,5 +81,35 @@ public class MyActivity extends AppCompatActivity {
             intent.putExtra("hashMap", hashMap);
             startActivity(intent);
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("MyActivity", "at onResume.");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("MyActivity", "at onRestart.");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("MyActivity", "at onPause.");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("MyActivity", "at onStop.");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("MyActivity", "at onDestroy.");
     }
 }
